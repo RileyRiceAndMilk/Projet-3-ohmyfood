@@ -1,0 +1,151 @@
+@media (max-width: 767px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        margin-top: 20px;
+    }
+
+    .restaurant {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 767px;
+        margin: 20px auto;
+    }
+    .restaurant img {
+        width: 100%;
+        max-width: 767px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .Fonctionnement {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .white-button {
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        cursor: pointer;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin-bottom: 30px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+    }
+    .card {
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px;
+        filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    }
+    .Entrée{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 767px;
+        margin: 20px auto;
+    }
+    
+    .Entrée-cards {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 767px;
+        gap: 20px;
+    }
+    
+    .Entrée-cards .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 767px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        flex-grow: 1;
+    }
+    
+    .Entrée-cards img {
+        width: 100%;
+        max-width: 767px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    .card-content {
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .card-title {
+        margin: 10px 0 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .card-subtitle {
+        margin: 5px 0 0;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .search-footer {
+        display: flex;
+        flex-direction: column;
+        padding: 40px; 
+        width: 375px;
+        background-color: #353535;
+        color: white; 
+        height: 186px; 
+    }
+    
+    .ohmyfood-footer ul {
+        padding-inline-start: 20px;
+    }
+    
+    .search-footer .p a[href="p"] {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    li {
+        font-weight: normal;
+        text-align: left;
+        font-size: 15px;
+        list-style-type: none;
+    }
+}
