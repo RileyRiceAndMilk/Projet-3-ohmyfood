@@ -123,10 +123,11 @@ header {
     box-sizing: border-box;
 }
 
+
 .card {
     background-color: white;
     border-radius: 20px;
-    padding: 5px;
+    padding: 15px; 
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
     margin-top: 20px;
     width: 100%;
@@ -134,6 +135,50 @@ header {
     box-sizing: border-box;
 }
 
+
+.card-txt {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 0.5;
+}
+
+.card-title {
+    margin: 0; 
+    margin-bottom: 5px; 
+}
+
+.card-subtitle-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 14px;
+}
+
+.price {
+    font-weight: bold; 
+    font-size: 14px; 
+}
+
+.euro {
+    font-weight: bold; 
+}
+
+.menu {
+    background-color: #F3F3F3;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px; 
+    padding: 20px;
+    width: 100%;
+    max-width: 767px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-sizing: border-box;
+}
 
 .Entrée-title {
     position: relative; 
@@ -153,6 +198,65 @@ header {
     width: 10%; 
     height: 2px; 
     background-color: #99E2D0
+}
+
+.Plats-title {
+    position: relative; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+}
+
+.Plats-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 5%; 
+    transform: translateX(-50%); 
+    width: 10%; 
+    height: 2px; 
+    background-color: #99E2D0
+}
+
+.Desserts-title {
+    position: relative; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+}
+
+.Desserts-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 5%; 
+    transform: translateX(-50%); 
+    width: 10%; 
+    height: 2px; 
+    background-color: #99E2D0
+}
+
+.button-wrapper {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.violet-button {
+    background: rgb(247, 160, 250);
+    background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+    color: white;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: none;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 footer {
