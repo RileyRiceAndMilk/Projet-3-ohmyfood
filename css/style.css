@@ -12,12 +12,13 @@ html, body {
 
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    max-width: 676px;
-    width: 100%;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
 }
 
 .logo-container {
@@ -27,11 +28,6 @@ header {
     width: 100%;
     position: relative;
     margin-bottom: 5px;
-}
-
-.logo {
-    width: 200px;
-    height: auto;
 }
 
 .logo-container::after {
