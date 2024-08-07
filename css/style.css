@@ -202,18 +202,34 @@ main {
     border-top-right-radius: 10px;
 }
 
+
+.card {
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+
+.card-image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .new-tag {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color:#99E2D0; 
-    color:#008766; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    font-size: 18px; 
+    background-color: #99E2D0;
+    color: #008766;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .card-content {
@@ -225,6 +241,7 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
+    color: black; 
 }
 
 .card-txt {
@@ -238,45 +255,40 @@ main {
 .card-title,
 .card-subtitle {
     margin: 0;
+    text-decoration: none; 
+    color: inherit;
 }
 
 .card-subtitle {
     font-size: 14px;
 }
 
-.card-content .fa-heart {
-    position: absolute;
-    font-size: 24px;
-    top: 10px;
-    right: 10px;
-    transition: color 0.3s ease;
-}
-
-
 .heart-container {
-    display: inline-block;
-    cursor: pointer;
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
     font-size: 24px;
+    color: black;
 }
-
 
 .heart-checkbox {
     display: none;
 }
 
-
 .fa-heart {
-    color: black; 
+    color: black;
 }
 
 .heart-checkbox:checked + .fa-heart {
-    color: transparent; 
-    background: linear-gradient(180deg,rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+    color: transparent;
+    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
     background-clip: text;
-    -webkit-background-clip: text; 
-    display: inline-block; 
-    font-weight: bold; 
-    font-size: 24px; 
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 footer {
