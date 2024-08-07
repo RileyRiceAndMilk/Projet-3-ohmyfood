@@ -7,7 +7,9 @@
     <title>ohmyfood</title>
     <link rel="icon" href="" type="image/png">
     <link rel="stylesheet" href="./css/style1.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
 </head>
 
 <body>
@@ -20,27 +22,34 @@
             <img src="C:\Users\User\Desktop\devoir 3\Images+et+textes+Ohmyfood\Images et textes Ohmyfood\images\restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                 alt="Image de la chambre d'hôtel montrant un lit">
             <h3 class="card-title">Le délice des sens</h3>
+            <label class="heart-container">
+                <input type="checkbox" class="heart-checkbox">
+                <i class="fa-regular fa-heart"></i>
+            </label>
         </section>
+        <section class="menu">
         <section class="Entrée">
             <div class="Entrée-title">
                 <h2>Entrée </h2>
             </div>
             <div class="Entrée-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Tartare de thon</h3>
-                            <p class="card-subtitle">Assaisonné au yuzu 25<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Tartare de thon</h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle">Assaisonné au yuzu </p>
+                            <p class="price">25<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
             </div>
             <div class="Entrée-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Bouchée de homard croustillant </h3>
-                            <p class="card-subtitle"> Et sa farandole de petits légumes 35<span class="euro">€</span>
+                    <div class="card-txt">
+                        <h3 class="card-title">Bouchée de homard croustillant </h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Et sa farandole de petits légumes </p>
+                            <p class="price">35<span class="euro">€</span>
                             </p>
                         </div>
                     </div>
@@ -48,10 +57,11 @@
             </div>
             <div class="Entrée-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Velouté de cèpes</h3>
-                            <p class="card-subtitle"> Aux truffes 20<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Velouté de cèpes</h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Aux truffes </p>
+                            <p class="price"> 20<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
@@ -63,30 +73,33 @@
             </div>
             <div class="Plats-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Poulet rôti aux herbes de Provence </h3>
-                            <p class="card-subtitle"> Et sa crème de truffe 40<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Poulet rôti aux herbes de Provence </h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Et sa crème de truffe </p>
+                            <p class="price"> 40<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
             </div>
             <div class="Plats-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Langouste rôtie</h3>
-                            <p class="card-subtitle"> Et ses légumes de saison 35<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Langouste rôtie</h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Et ses légumes de saison </p>
+                            <p class="price">35<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
             </div>
             <div class="Plats-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Côte de bœuf Angus</h3>
-                            <p class="card-subtitle"> Et sa purée de panais 44<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Côte de bœuf Angus</h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Et sa purée de panais</p>
+                            <p class="price"> 44<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
@@ -98,20 +111,22 @@
             </div>
             <div class="Desserts-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Farandole de desserts</h3>
-                            <p class="card-subtitle">Du chef 18<span class="euro">€</span></p>
+                    <div class="card-txt">
+                        <h3 class="card-title">Farandole de desserts</h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle">Du chef </p>
+                            <p class="price"> 18<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
             </div>
             <div class="Desserts-cards">
                 <article class="card">
-                    <div class="card-content">
-                        <div class="card-txt">
-                            <h3 class="card-title">Crème brulée </h3>
-                            <p class="card-subtitle"> Revisitée 22<span class="euro">€</span>
+                    <div class="card-txt">
+                        <h3 class="card-title">Crème brulée </h3>
+                        <div class="card-subtitle-container">
+                            <p class="card-subtitle"> Revisitée </p>
+                            <p class="price"> 22<span class="euro">€</span>
                             </p>
                         </div>
                     </div>
@@ -119,21 +134,31 @@
             </div>
             <div class="Desserts-cards">
                 <article class="card">
-                    <div class="card-content">
                         <div class="card-txt">
                             <h3 class="card-title">Tiramisu </h3>
-                            <p class="card-subtitle"> À la noisette 23<span class="euro">€</span></p>
+                            <div class="card-subtitle-container">
+                            <p class="card-subtitle"> À la noisette </p>
+                                <p class="price"> 23<span class="euro">€</span></p>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
+    </section>
+        <div class="button-wrapper">
+            <button class="violet-button">
+                <p>Commander</p>
+            </button>
+        </div>
     </main>
     <footer>
         <nav class="search-footer">
             <ul class="ohmyfood-footer">
-                <li>Proposer un restaurant</li>
-                <li>Devenir partenaire</li>
+                <div class="omyfoodtitre">
+                    <ul>Ohmyfood</ul>
+                </div>
+                <li><i class="fa-solid fa-utensils"></i> Proposer un restaurant</li>
+                <li><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</li>
                 <li>Mentions légales</li>
                 <li>Contact</li>
             </ul>
