@@ -1,7 +1,8 @@
-html, body {
+html,
+body {
     overflow-x: hidden;
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
 
@@ -27,7 +28,7 @@ header {
     position: relative;
     width: 100%;
     max-width: 767px;
-    padding: 10px 20px; 
+    padding: 30px 20px 10px;
     box-sizing: border-box;
 }
 
@@ -35,17 +36,18 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    z-index: 1; 
+    width: 200px;
+    z-index: 1;
 }
 
 #back-to-menu {
     position: absolute;
-    left: 20px; 
+    left: 20px;
     z-index: 1;
-    top: 50%; 
+    top: 70%;
     transform: translateY(-50%);
     color: black;
+    font-size: 24px;
 }
 
 
@@ -68,18 +70,59 @@ header {
     z-index: 0;
 }
 
+.card-restaurant {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title-restaurant {
+    font-family: 'Shrikhand', italic;
+    margin: 0;
+    font-size: 28px;
+    flex-grow: 1;
+    Line-height: 40px;
+}
+
+.heart-container {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.heart-checkbox {
+    display: none;
+}
+
+
+.fa-heart {
+    color: black;
+}
+
+.heart-checkbox:checked+.fa-heart {
+    color: transparent;
+    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 .menu {
     background-color: #F3F3F3;
     position: relative;
     z-index: 1;
-    margin-top: -50px; 
+    margin-top: -50px;
     padding: 20px;
     width: 100%;
     max-width: 767px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
+
 .card {
     background-color: white;
     border-radius: 20px;
@@ -91,9 +134,30 @@ header {
     box-sizing: border-box;
 }
 
+
+.Entrée-title {
+    position: relative; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+}
+
+.Entrée-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 5%; 
+    transform: translateX(-50%); 
+    width: 10%; 
+    height: 2px; 
+    background-color: #99E2D0
+}
+
 footer {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
     max-width: 767px;
     box-sizing: border-box;
@@ -134,4 +198,3 @@ li {
     font-size: 15px;
     list-style-type: none;
 }
-
