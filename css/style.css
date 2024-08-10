@@ -168,7 +168,7 @@ main {
     max-width: 767px;
 }
 
-.Fonctionnement-boutons {
+.Button-Operation {
     display: flex;
     flex-direction: column;
     width: 100%; 
@@ -494,7 +494,7 @@ li {
         box-shadow: none;
     }
 
-    .Fonctionnement-boutons {
+    .Button-Operation {
         display: flex;
         flex-direction: row;
         justify-content: center;
