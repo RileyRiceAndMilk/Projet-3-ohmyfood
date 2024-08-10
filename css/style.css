@@ -83,6 +83,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 80%;
+    max-width: 767px;
     gap: 20px;
     margin: 0;
     padding: 0;
@@ -93,6 +95,15 @@ main {
     text-align: left;
     width: 100%;
     align-items: flex-start;
+    max-width: 767px;
+}
+
+.Fonctionnement-boutons {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 767px;
+    gap: 20px;
 }
 
 .cercle-et-bouton {
@@ -103,25 +114,51 @@ main {
     width: 100%;
 }
 
-.white-button {
-    background-color: #F3F3F3;
-    color: black;
-    border: none;
-    padding: 25px 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     font-weight: bold;
+    color: white;
+    background-color: rgba(151, 71, 255, 1);
+    z-index: 1;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateY(-70%);
+    left: -15px;
+    top: 45%;
+} 
+
+
+.white-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 100%;
+    background-color: #F3F3F3;
+    color: black;
+    border: none;
     text-align: center;
     box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    gap: 10px;
+    width: 100%;
+    max-width: 767px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    margin-bottom: 20px;
 }
 
+.white-button:hover {
+    background-color: #e0e0e0; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
 .white-button .fa-mobile-screen-button,
 .white-button .fa-list-ul,
@@ -129,7 +166,6 @@ main {
     color: black;
     transition: color 0.3s ease;
 }
-
 .white-button:active .fa-mobile-screen-button,
 .white-button:focus .fa-mobile-screen-button,
 .white-button:active .fa-list-ul,
@@ -139,23 +175,7 @@ main {
     color: #6a0dad;
 }
 
-.circle {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(151, 71, 255, 1);
-    border-radius: 50%;
-    left: -15px;
-    top: 45%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    z-index: 1;
-}
+
 
 .restaurant {
     display: flex;
