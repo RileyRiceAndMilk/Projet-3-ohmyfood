@@ -36,32 +36,28 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 100px;
     z-index: 1;
+    margin-bottom: 20px;
 }
 
 #back-to-menu {
     position: absolute;
     left: 20px;
     z-index: 1;
-    top: 70%;
+    top: 50%;
     transform: translateY(-50%);
     color: black;
     font-size: 24px;
 }
 
-.restaurant {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.restaurants {
     width: 100%;
-    max-width: 767px;
-    margin: 20px auto;
-    position: relative;
+    max-width: 767px; 
+    overflow: hidden; 
 }
 
-.restaurant img {
+.restaurants img {
     width: 100%;
     height: 275px;
     max-width: 767px;
@@ -69,18 +65,19 @@ header {
     z-index: 0;
 }
 
-.card-restaurant {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.card-restaurants {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
 }
 
 .card-title-restaurant {
     font-family: 'Shrikhand', italic;
-    margin: 0;
-    font-size: 28px;
-    flex-grow: 1;
-    Line-height: 40px;
+    font-size: 24px; 
+    margin: 0; 
+    line-height: 40px; 
+    flex-grow: 1; 
 }
 
 .heart-container {
@@ -149,7 +146,6 @@ header {
         transform: scale(1);
     }
 } 
-
 
 .menu {
     background-color: #F3F3F3;
@@ -346,6 +342,55 @@ header {
     }
 }
 
+
+.card {
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.card-checkbox {
+    display: none;
+}
+
+
+.checkmark-container {
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    font-size: 24px;
+    z-index: 10;
+    display: none; 
+    background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+
+.card-checkbox:checked + .card-label .checkmark-container {
+    display: block; 
+    animation: showAndSlide 4.5s ease forwards; 
+}
+
+
+@keyframes showAndSlide {
+    0% {
+        right: 40px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; 
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        right: 100px;
+    }
+}
 .button-wrapper {
     width: 100%;
     display: flex;
@@ -428,18 +473,98 @@ li {
         max-width: 1440px;
     }
 
-    .restaurant {
+    
+    .restaurants {
         width: 100%;
         min-width: 767px;
         max-width: 1440px;
     }
 
-    .restaurant img {
+    .restaurants img {
         width: 100%;
         min-width: 767px;
         height: 275px;
         position: relative;
         z-index: 0;
+    }
+
+    .card-restaurants {
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        width: 100%;
+    }
+    
+    .card-title-restaurant {
+        font-size: 24px; 
+    }
+    
+    .heart-container {
+        display: inline-flex; 
+        align-items: center;
+        cursor: pointer;
+        font-size: 24px; 
+    }
+    
+    .heart-checkbox {
+        display: none; 
+    }
+    
+    .fa-heart {
+        color: black;
+        transition: background 3s ease, transform 0.3s ease;
+    }
+    
+    .heart-container:hover .fa-heart {
+        color: transparent;
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartHover 3s forwards ease-in-out; 
+    }
+    
+    .heart-checkbox:checked + .fa-heart {
+        color: transparent; 
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartClick 3s forwards ease-in-out;
+    }
+    
+    @keyframes fillHeartHover {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
+    } 
+    
+    @keyframes fillHeartClick {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
     }
 
     .menu {
@@ -511,76 +636,54 @@ li {
             opacity: 1;
             transform: translateY(0);
         }
-    }
-
-    .heart-container {
-        display: inline-block;
+    } 
+    
+    .card {
+        position: relative;
+        transition: box-shadow 0.3s ease;
         cursor: pointer;
-        font-size: 24px;
     }
     
-    .heart-checkbox {
+    .card-checkbox {
         display: none;
     }
     
-    .fa-heart {
-        color: black;
-        transition: background 3s ease, transform 0.3s ease;
-    }
-    
-    .heart-container:hover .fa-heart {
+    .checkmark-container {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 24px;
+        z-index: 10;
+        display: none;
+        background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+        -webkit-background-clip: text;
         color: transparent;
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartHover 3s forwards ease-in-out; 
     }
     
-    .heart-checkbox:checked + .fa-heart {
-        color: transparent; 
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartClick 3s forwards ease-in-out;
+    .card-checkbox:checked + .checkmark-container {
+        display: block; 
+        animation: showAndSlide 2.5s ease forwards;
     }
     
-    @keyframes fillHeartHover {
+    @keyframes showAndSlide {
         0% {
-            color: transparent;
-            transform: scale(0.5);
+            right: 60px;
+            opacity: 0;
         }
-        50% {
-            color: transparent;
-            transform: scale(1.1);
+        10% {
+            opacity: 1;
+        }
+        30% {
+            opacity: 1;
         }
         100% {
-            color: transparent;
-            transform: scale(1);
+            right: 300px; 
         }
-    } 
+    }
     
-    @keyframes fillHeartClick {
-        0% {
-            color: transparent;
-            transform: scale(0.5);
-        }
-        50% {
-            color: transparent;
-            transform: scale(1.1);
-        }
-        100% {
-            color: transparent;
-            transform: scale(1);
-        }
-    } 
 
-    .violet-button {
+ .violet-button {
         background: rgb(247, 160, 250);
         background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
         color: white;
@@ -602,6 +705,7 @@ li {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        padding: 20px;
     }
 
     .omyfoodtitre {
