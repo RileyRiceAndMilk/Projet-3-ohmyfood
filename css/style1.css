@@ -89,17 +89,16 @@ header {
     font-size: 24px;
 }
 
-
 .heart-checkbox {
     display: none;
 }
 
-
 .fa-heart {
     color: black;
+    transition: background 3s ease, transform 0.3s ease;
 }
 
-.heart-checkbox:checked+.fa-heart {
+.heart-container:hover .fa-heart {
     color: transparent;
     background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
     background-clip: text;
@@ -107,7 +106,50 @@ header {
     display: inline-block;
     font-weight: bold;
     font-size: 24px;
+    animation: fillHeartHover 3s forwards ease-in-out; 
 }
+
+.heart-checkbox:checked + .fa-heart {
+    color: transparent; 
+    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 24px;
+    animation: fillHeartClick 3s forwards ease-in-out;
+}
+
+@keyframes fillHeartHover {
+    0% {
+        color: transparent;
+        transform: scale(0.5);
+    }
+    50% {
+        color: transparent;
+        transform: scale(1.1);
+    }
+    100% {
+        color: transparent;
+        transform: scale(1);
+    }
+} 
+
+@keyframes fillHeartClick {
+    0% {
+        color: transparent;
+        transform: scale(0.5);
+    }
+    50% {
+        color: transparent;
+        transform: scale(1.1);
+    }
+    100% {
+        color: transparent;
+        transform: scale(1);
+    }
+} 
+
 
 .menu {
     background-color: #F3F3F3;
@@ -323,6 +365,11 @@ header {
     margin-bottom: 30px;
 }
 
+.violet-button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.2); 
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -464,6 +511,91 @@ li {
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    .heart-container {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    
+    .heart-checkbox {
+        display: none;
+    }
+    
+    .fa-heart {
+        color: black;
+        transition: background 3s ease, transform 0.3s ease;
+    }
+    
+    .heart-container:hover .fa-heart {
+        color: transparent;
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartHover 3s forwards ease-in-out; 
+    }
+    
+    .heart-checkbox:checked + .fa-heart {
+        color: transparent; 
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartClick 3s forwards ease-in-out;
+    }
+    
+    @keyframes fillHeartHover {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
+    } 
+    
+    @keyframes fillHeartClick {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
+    } 
+
+    .violet-button {
+        background: rgb(247, 160, 250);
+        background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+        color: white;
+        padding: 5px 50px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: none;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .violet-button:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        filter: brightness(1.2); 
     }
 
     .search-footer {
