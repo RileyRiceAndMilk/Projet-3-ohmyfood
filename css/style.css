@@ -7,27 +7,34 @@ body {
     height: 100%;
 }
 
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
 
 .loader {
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; 
-    animation: hide-loader 3s forwards; 
+    z-index: 1000;
+    animation: hide-loader 3s forwards;
 }
 
 .logo-loader {
-    width: 120px; 
-    animation: grow-shrink-loader 3s ease-in-out infinite; 
+    width: 120px;
+    animation: grow-shrink-loader 3s ease-in-out infinite;
 }
 
 @keyframes grow-shrink-loader {
-    0%, 100% {
-        transform: scale(1); 
+
+    0%,
+    100% {
+        transform: scale(1);
     }
+
     50% {
-        transform: scale(1.5); 
+        transform: scale(1.5);
     }
 }
 
@@ -36,10 +43,12 @@ body {
         opacity: 1;
         visibility: visible;
     }
+
     99% {
         opacity: 1;
         visibility: visible;
     }
+
     100% {
         opacity: 0;
         visibility: hidden;
@@ -51,11 +60,11 @@ body {
     visibility: hidden;
     text-align: center;
     margin-top: 10px;
-    animation: show-content 3s forwards; 
+    animation: show-content 3s forwards;
 }
 
 .logo-main {
-    width: 100px; 
+    width: 100px;
 }
 
 
@@ -64,10 +73,12 @@ body {
         opacity: 0;
         visibility: hidden;
     }
+
     99% {
         opacity: 0;
         visibility: hidden;
     }
+
     100% {
         opacity: 1;
         visibility: visible;
@@ -127,25 +138,35 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 0px 40px;
 }
 
 .violet-button {
     background: rgb(247, 160, 250);
-    background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+    background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
     color: white;
-    padding: 5px 50px;
+    padding: 5px 5px;
     border: none;
-    border-radius: 30px;
+    border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    width: 70%;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 
 .violet-button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.2); 
+    filter: brightness(1.2);
 }
 
 .operation {
@@ -171,7 +192,7 @@ main {
 .Button-Operation {
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
     max-width: 767px;
     gap: 20px;
 }
@@ -200,7 +221,7 @@ main {
     transform: translateY(-70%);
     left: -15px;
     top: 45%;
-} 
+}
 
 
 .white-button {
@@ -221,15 +242,15 @@ main {
     gap: 10px;
     width: 100%;
     max-width: 767px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
 }
 
 .white-button:hover {
-    background-color: #e0e0e0; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); 
-    filter: brightness(1.2); 
-    }
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.2);
+}
 
 .white-button .fa-mobile-screen-button,
 .white-button .fa-list-ul,
@@ -237,6 +258,7 @@ main {
     color: black;
     transition: color 0.3s ease;
 }
+
 .white-button:active .fa-mobile-screen-button,
 .white-button:focus .fa-mobile-screen-button,
 .white-button:active .fa-list-ul,
@@ -388,11 +410,11 @@ main {
     display: inline-block;
     font-weight: bold;
     font-size: 24px;
-    animation: fillHeartHover 3s forwards ease-in-out; 
+    animation: fillHeartHover 3s forwards ease-in-out;
 }
 
-.heart-checkbox:checked + .fa-heart {
-    color: transparent; 
+.heart-checkbox:checked+.fa-heart {
+    color: transparent;
     background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -407,31 +429,35 @@ main {
         color: transparent;
         transform: scale(0.5);
     }
+
     50% {
         color: transparent;
         transform: scale(1.1);
     }
+
     100% {
         color: transparent;
         transform: scale(1);
     }
-} 
+}
 
 @keyframes fillHeartClick {
     0% {
         color: transparent;
         transform: scale(0.5);
     }
+
     50% {
         color: transparent;
         transform: scale(1.1);
     }
+
     100% {
         color: transparent;
         transform: scale(1);
     }
-} 
-   
+}
+
 
 footer {
     display: flex;
@@ -453,35 +479,30 @@ footer {
     box-sizing: border-box;
 }
 
+.ohmyfood-footer {
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 0;
+    margin: 0;
+    list-style-type: none;
+    gap: 10px;
+    align-items: flex-start;
+    
+}
+
+.ohmyfood-footer li {
+    font-weight: normal;
+    font-size: 15px;
+    list-style-type: none;
+}
 
 .omyfoodtitre {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
     font-family: 'Shrikhand', cursive;
     font-weight: lighter;
     font-size: 25px;
-    margin-bottom: 10px;
-}
-
-.ohmyfood-footer ul {
-    padding-inline-start: 0px;
     margin: 0;
-    list-style-type: none;
-    text-align: left;
-}
-
-.search-footer .p a[href="p"] {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-li {
-    font-weight: normal;
-    text-align: left;
-    font-size: 15px;
-    list-style-type: none;
+    color: white;
+    text-decoration: none;
 }
 
 @media (min-width: 1024px) {
@@ -509,14 +530,14 @@ li {
         border: none;
         border-radius: 30px;
         cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         font-size: 20px;
         transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .violet-button:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            filter: brightness(1.2); 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        filter: brightness(1.2);
     }
 
     .white-button {
@@ -525,19 +546,19 @@ li {
     }
 
     .white-button:hover {
-        background-color: #e0e0e0; 
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); 
-        filter: brightness(1.2); 
-        }
+        background-color: #e0e0e0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        filter: brightness(1.2);
+    }
 
     .restaurant {
-        position: relative; 
-        max-width: 900px; 
-        margin: 20px auto; 
+        position: relative;
+        max-width: 900px;
+        margin: 20px auto;
         padding: 0 20px;
-        box-sizing: border-box; 
+        box-sizing: border-box;
     }
-    
+
     .restaurant::before {
         content: '';
         position: absolute;
@@ -546,116 +567,171 @@ li {
         width: 100vw;
         height: calc(100% + 40px);
         background-color: #f7f7f7;
-        z-index: -1; 
-        box-sizing: border-box; 
-        margin-left: calc(50% - 50vw); 
+        z-index: -1;
+        box-sizing: border-box;
+        margin-left: calc(50% - 50vw);
     }
-    
-      
-      .restaurants-title {
-        text-align: left; 
-        margin: 20px 0; 
+
+
+    .restaurants-title {
+        text-align: left;
+        margin: 20px 0;
         padding: 0;
-        font-size: 24px; 
+        font-size: 24px;
         width: 100%;
     }
-    
-   
+
+
     .restaurants-cards {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px; 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
         width: 100%;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         max-width: 900px;
     }
 
-.heart-container {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 24px;
-    color: black;
+    .heart-container {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 24px;
+        color: black;
+    }
+
+    .heart-checkbox {
+        display: none;
+    }
+
+    .fa-heart {
+        color: black;
+        transition: background 3s ease, transform 0.3s ease;
+    }
+
+    .heart-container:hover .fa-heart {
+        color: transparent;
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartHover 3s forwards ease-in-out;
+    }
+
+    .heart-checkbox:checked+.fa-heart {
+        color: transparent;
+        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 24px;
+        animation: fillHeartClick 3s forwards ease-in-out;
+    }
+
+    @keyframes fillHeartHover {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fillHeartClick {
+        0% {
+            color: transparent;
+            transform: scale(0.5);
+        }
+
+        50% {
+            color: transparent;
+            transform: scale(1.1);
+        }
+
+        100% {
+            color: transparent;
+            transform: scale(1);
+        }
+    }
+
+    .violet-button {
+        background: rgb(247, 160, 250);
+        background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+        color: white;
+        padding: 5px 5px;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        width: 20%;
+        height: 45px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+ 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.heart-checkbox {
-    display: none;
+.search-footer {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    background-color: #353535;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: flex-end; 
+    gap: 20px;
 }
 
-.fa-heart {
-    color: black;
-    transition: background 3s ease, transform 0.3s ease;
+.omyfoodtitre {
+    font-family: 'Shrikhand', cursive;
+    font-weight: lighter;
+    font-size: 15px;
+    margin: 0; 
+    order: 1; 
 }
 
-.heart-container:hover .fa-heart {
-    color: transparent;
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartHover 3s forwards ease-in-out; 
+.ohmyfood-footer {
+    display: flex;
+    flex-direction: row; 
+    padding-inline-start: 0px;
+    margin: 0;
+    list-style-type: none;
+    text-align: right; 
+    gap: 20px; 
+    order: 2;
 }
 
-.heart-checkbox:checked + .fa-heart {
-    color: transparent; 
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartClick 3s forwards ease-in-out;
+.ohmyfood-footer li {
+    font-weight: normal;
+    text-align: right;
+    font-size: 15px;
+    list-style-type: none;
 }
 
-@keyframes fillHeartHover {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
-} 
-
-@keyframes fillHeartClick {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
-} 
-    .search-footer {
-        display: flex; 
-        flex-direction: row;
-        justify-content: flex-end; 
-    }
-
-    .omyfoodtitre {
-        font-size: 15px;
-        order: 1; 
-    }
-    
-    .ohmyfood-footer {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-    
-   
 }
