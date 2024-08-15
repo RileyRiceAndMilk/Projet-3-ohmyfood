@@ -13,6 +13,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 767px;
@@ -78,77 +79,6 @@ header {
     margin: 0;
     line-height: 40px;
     flex-grow: 1;
-}
-
-.heart-container {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.heart-checkbox {
-    display: none;
-}
-
-.fa-heart {
-    color: black;
-    transition: background 3s ease, transform 0.3s ease;
-}
-
-.heart-container:hover .fa-heart {
-    color: transparent;
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartHover 3s forwards ease-in-out;
-}
-
-.heart-checkbox:checked+.fa-heart {
-    color: transparent;
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartClick 3s forwards ease-in-out;
-}
-
-@keyframes fillHeartHover {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
-}
-
-@keyframes fillHeartClick {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
 }
 
 .menu {
@@ -282,123 +212,23 @@ header {
 }
 
 .card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.Entrée .card {
-    animation: fadeInUp 1s forwards;
-}
-
-.Entrée .card:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.Entrée .card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.Entrée .card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.Plats .card {
-    animation: fadeInUp 1s forwards;
-}
-
-.Plats .card:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.Plats .card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.Plats .card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.Desserts .card {
-    animation: fadeInUp 1s forwards;
-}
-
-.Desserts .card:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.Desserts .card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.Desserts .card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.card {
     position: relative;
     transition: box-shadow 0.3s ease;
     cursor: pointer;
     margin-bottom: 20px;
+    overflow: hidden; 
 }
-
 
 .card-checkbox {
     display: none;
 }
 
 
-.checkmark-container {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    z-index: 10;
-    display: none;
-    background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-    background-clip: text;
-    color: transparent;
-}
-
-
-.card-checkbox:checked+.card-label .checkmark-container {
-    display: block;
-    animation: showAndSlide 4.5s ease forwards;
-}
-
-
-@keyframes showAndSlide {
-    0% {
-        right: 40px;
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    100% {
-        right: 100px;
-    }
+.card-subtitle-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
 }
 
 .button-wrapper {
@@ -407,31 +237,6 @@ header {
     justify-content: center;
 }
 
-.violet-button {
-    background: rgb(247, 160, 250);
-    background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-    color: white;
-    padding: 5px 5px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    width: 55%;
-    height: 50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    margin-bottom: 20px;
-    width: 30%;
-    height: 55px;
-}
-
-.violet-button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.2);
-}
 
 footer {
     display: flex;
@@ -503,8 +308,8 @@ li {
 
     .restaurants img {
         width: 100%;
-        object-fit: cover; 
-        min-width: 767px; 
+        object-fit: cover;
+        min-width: 767px;
         position: relative;
         z-index: 0;
     }
@@ -531,67 +336,6 @@ li {
         display: none;
     }
 
-    .fa-heart {
-        color: black;
-        transition: background 3s ease, transform 0.3s ease;
-    }
-
-    .heart-container:hover .fa-heart {
-        color: transparent;
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartHover 3s forwards ease-in-out;
-    }
-
-    .heart-checkbox:checked+.fa-heart {
-        color: transparent;
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartClick 3s forwards ease-in-out;
-    }
-
-    @keyframes fillHeartHover {
-        0% {
-            color: transparent;
-            transform: scale(0.5);
-        }
-
-        50% {
-            color: transparent;
-            transform: scale(1.1);
-        }
-
-        100% {
-            color: transparent;
-            transform: scale(1);
-        }
-    }
-
-    @keyframes fillHeartClick {
-        0% {
-            color: transparent;
-            transform: scale(0.5);
-        }
-
-        50% {
-            color: transparent;
-            transform: scale(1.1);
-        }
-
-        100% {
-            color: transparent;
-            transform: scale(1);
-        }
-    }
-
     .menu {
         width: 80%;
         margin-left: auto;
@@ -600,138 +344,22 @@ li {
     }
 
     .card {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .Entrée .card {
-        animation: fadeInUp 1s forwards;
-    }
-
-    .Entrée .card:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    .Entrée .card:nth-child(2) {
-        animation-delay: 0.5s;
-    }
-
-    .Entrée .card:nth-child(3) {
-        animation-delay: 1s;
-    }
-
-    .Plats .card {
-        animation: fadeInUp 1s forwards;
-    }
-
-    .Plats .card:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    .Plats .card:nth-child(2) {
-        animation-delay: 0.5s;
-    }
-
-    .Plats .card:nth-child(3) {
-        animation-delay: 1s;
-    }
-
-    .Desserts .card {
-        animation: fadeInUp 1s forwards;
-    }
-
-    .Desserts .card:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    .Desserts .card:nth-child(2) {
-        animation-delay: 0.5s;
-    }
-
-    .Desserts .card:nth-child(3) {
-        animation-delay: 1s;
-    }
-
-
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .card {
         position: relative;
         transition: box-shadow 0.3s ease;
         cursor: pointer;
+        margin-bottom: 20px;
+        overflow: hidden; 
     }
-
+    
     .card-checkbox {
         display: none;
     }
-
-    .checkmark-container {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        font-size: 24px;
-        z-index: 10;
-        display: none;
-        background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-        color: transparent;
-        background-clip: text;
-    }
-
-    .card:hover .checkmark-container {
-        display: block;
-        animation: showAndSlide 2.5s ease forwards;
-    }
-
-    @keyframes showAndSlide {
-        0% {
-            right: 60px;
-            opacity: 0;
-        }
-
-        10% {
-            opacity: 1;
-        }
-
-        30% {
-            opacity: 1;
-        }
-
-        100% {
-            right: 300px;
-        }
-    }
-
-
-    .violet-button {
-        background: rgb(247, 160, 250);
-        background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-        color: white;
-        padding: 5px 50px;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        box-shadow: none;
-        font-size: 16px;
-        margin-bottom: 30px;
-        width: 15%;
-        height: 55px;
-    }
-
-    .violet-button:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-        filter: brightness(1.2);
+    
+    .card-subtitle-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden; 
     }
 
     footer {
