@@ -1,0 +1,235 @@
+
+$fa-heart-color-default: black;
+$fa-heart-color-hover: transparent;
+$gradient-start: rgba(151, 71, 255, 1);
+$gradient-middle: rgba(192, 96, 195, 1);
+$gradient-end: rgba(247, 160, 250, 1);
+$font-size: 24px;
+$animation-duration: 1s;
+$transform-scale-start: 0.5;
+$transform-scale-mid: 1.1;
+$transform-scale-end: 1;
+$animation-delay-step: 0.01s;
+$transform-start: translateY(20px);
+$transform-end: translateY(0);
+$transition-duration: 0.3s;
+$checkmark-size: 10px;
+$checkmark-color: #99E2D0;
+$checkmark-background: white;
+$checkmark-padding: 8px;
+$checkmark-position-start: 60px;
+$checkmark-position-end: 10px;
+$card-hover-background: #99E2D0;
+$price-transform-x: -60px;
+$violet-button-bg-start: #FF79DA;
+$violet-button-bg-end: #9356DC;
+$violet-button-color: white;
+$violet-button-padding: 5px 50px;
+$violet-button-border-radius: 30px;
+$violet-button-font-size: 16px;
+$violet-button-width: 50%;
+$violet-button-height: 55px;
+$violet-button-box-shadow: none;
+$violet-button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+$violet-button-hover-brightness: 1.2;
+$hover-bg-color: #99E2D0;
+
+@mixin fa-heart-transition {
+  transition: background $animation-duration ease, transform 0.1s ease;
+}
+
+@mixin fa-heart-hover {
+  color: $fa-heart-color-hover;
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-middle 50%, $gradient-end 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+  font-weight: bold;
+  font-size: $font-size;
+  animation: fillHeartHover $animation-duration forwards ease-in-out;
+}
+
+@mixin card-transition {
+  transition: transform $transition-duration ease, opacity $transition-duration ease;
+}
+
+@mixin checkmark-transition {
+  transition: opacity $transition-duration ease, right $transition-duration ease;
+}
+
+@mixin price-transition {
+  transition: transform $transition-duration ease;
+}
+
+@mixin card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: calc(100% - $checkmark-position-start);
+  width: 100%;
+  height: 100%;
+  background-color: $card-hover-background;
+  z-index: 1;
+  transition: opacity $transition-duration ease;
+}
+
+@mixin violet-button-style($width: $violet-button-width, $height: $violet-button-height, $font-size: $violet-button-font-size) {
+  background: linear-gradient(180deg, $violet-button-bg-start 0%, $violet-button-bg-end 100%);
+  color: $violet-button-color;
+  padding: $violet-button-padding;
+  border: none;
+  border-radius: $violet-button-border-radius;
+  cursor: pointer;
+  box-shadow: $violet-button-box-shadow;
+  font-size: $font-size;
+  margin-bottom: 30px;
+  width: $width;
+  height: $height;
+}
+
+
+@keyframes fillHeartHover {
+  0% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-start);
+  }
+
+  50% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-mid);
+  }
+
+  100% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-end);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: $transform-start;
+  }
+
+  100% {
+    opacity: 1;
+    transform: $transform-end;
+  }
+}
+
+@keyframes showAndSlide {
+  0% {
+    right: $checkmark-position-start;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    right: $checkmark-position-end;
+  }
+}
+
+
+.fa-heart {
+  color: $fa-heart-color-default;
+  @include fa-heart-transition;
+}
+
+.heart-container:hover .fa-heart {
+  @include fa-heart-hover;
+}
+
+.card {
+  position: relative;
+  @include card-transition;
+  cursor: pointer;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-checkbox {
+  display: none;
+}
+
+.card-subtitle-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.price {
+  position: relative;
+  z-index: 1;
+  @include price-transition;
+}
+
+.checkmark-container {
+  position: absolute;
+  top: 50%;
+  right: $checkmark-position-start;
+  transform: translateY(-50%);
+  font-size: $checkmark-size;
+  z-index: 2;
+  opacity: 0;
+  @include checkmark-transition;
+  background-color: $checkmark-background;
+  border-radius: 50%;
+  padding: $checkmark-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: showAndSlide $animation-duration ease forwards;
+}
+
+.checkmark-container i {
+  color: $checkmark-color;
+}
+
+.card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(100% - $checkmark-position-start);
+  width: 100%;
+  height: 100%;
+  background-color: $hover-bg-color;
+  z-index: 1;
+  transition: opacity $transition-duration ease;
+}
+
+.card:hover .checkmark-container {
+  right: $checkmark-position-end;
+  opacity: 1;
+}
+
+.card:hover .price {
+  transform: translateX($price-transform-x);
+}
+
+.violet-button {
+  @include violet-button-style;
+}
+
+.violet-button:hover {
+  box-shadow: $violet-button-hover-shadow;
+  filter: brightness($violet-button-hover-brightness);
+}
+
+
+@media (min-width: 1024px) {
+  .violet-button {
+    @include violet-button-style(30%, 45px, 14px); 
+  }
+
+  .fa-heart {
+    @include fa-heart-transition;
+  }
+
+  .heart-container:hover .fa-heart {
+    @include fa-heart-hover;
+  }
+}
