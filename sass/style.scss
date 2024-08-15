@@ -1,0 +1,385 @@
+// Variables
+$animation-duration: 3s;
+
+// Loader
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: hide-loader $animation-duration forwards;
+  
+  .logo-loader {
+    width: 120px;
+    animation: grow-shrink-loader $animation-duration ease-in-out infinite;
+  }
+}
+
+// Keyframes
+@keyframes grow-shrink-loader {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes hide-loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Content
+.content {
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  margin-top: 10px;
+  animation: show-content $animation-duration forwards;
+  
+  .logo-main {
+    width: 100px;
+  }
+}
+
+// Keyframes for content
+@keyframes show-content {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Variables
+$violet-light: rgb(247, 160, 250);
+$violet-medium: rgba(192, 96, 195, 1);
+$violet-dark: rgba(151, 71, 255, 1);
+$button-padding: 5px;
+$button-border-radius: 40px;
+$button-font-size: 16px;
+$button-width: 70%;
+$button-height: 50px;
+$box-shadow-default: 0 4px 8px rgba(0, 0, 0, 0.2);
+$box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.6);
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin button-transition {
+  transition: background-color $transition-duration ease, 
+              box-shadow $transition-duration ease, 
+              transform $transition-duration ease;
+}
+
+// Button
+.violet-button {
+  background: linear-gradient(180deg, $violet-light 0%, $violet-medium 53%, $violet-dark 100%);
+  color: white;
+  padding: $button-padding;
+  border: none;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  box-shadow: $box-shadow-default;
+  font-size: $button-font-size;
+  width: $button-width;
+  height: $button-height;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include button-transition;
+  
+  &:hover {
+    box-shadow: $box-shadow-hover;
+    filter: brightness(1.2);
+  }
+}
+
+// Variables
+$background-color: #F3F3F3;
+$hover-background-color: #e0e0e0;
+$shadow-default: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.6);
+$font-size: 14px;
+$padding-vertical: 25px;
+$padding-horizontal: 30px;
+$border-radius: 10px;
+$transition-duration: 0.3s;
+$default-color: black;
+$active-focus-color: #6a0dad;
+$gap: 10px;
+$max-width: 767px;
+
+// Mixins
+@mixin button-transition {
+  transition: background-color $transition-duration ease, 
+              box-shadow $transition-duration ease;
+}
+
+// Button
+.white-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-color;
+  color: $default-color;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  padding: $padding-vertical $padding-horizontal;
+  border-radius: $border-radius;
+  box-shadow: $shadow-default;
+  font-size: $font-size;
+  gap: $gap;
+  width: 100%;
+  max-width: $max-width;
+  margin-bottom: 20px;
+
+  @include button-transition;
+  
+  &:hover {
+    background-color: $hover-background-color;
+    box-shadow: $shadow-hover;
+    filter: brightness(1.2);
+  }
+
+  .fa-mobile-screen-button,
+  .fa-list-ul,
+  .fa-store {
+    color: $default-color;
+    transition: color $transition-duration ease;
+    
+    &:active,
+    &:focus {
+      color: $active-focus-color;
+    }
+  }
+}
+
+// Variables
+$heart-color: black;
+$gradient-start: rgba(151, 71, 255, 1);
+$gradient-middle: rgba(192, 96, 195, 1);
+$gradient-end: rgba(247, 160, 250, 1);
+$font-size: 24px;
+$animation-duration: 3s;
+$transform-scale-start: 0.5;
+$transform-scale-middle: 1.1;
+$transform-scale-end: 1;
+
+// Mixins
+@mixin heart-transition {
+  transition: background $animation-duration ease, 
+              transform 0.3s ease;
+}
+
+@mixin heart-animation {
+  animation: fillHeartHover $animation-duration forwards ease-in-out;
+}
+
+// Heart Container
+.heart-container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: $font-size;
+  color: $heart-color;
+}
+
+// Heart Checkbox
+.heart-checkbox {
+  display: none;
+}
+
+// Heart Icon
+.fa-heart {
+  color: $heart-color;
+  @include heart-transition;
+  
+  &:hover {
+    color: transparent;
+    background: linear-gradient(180deg, $gradient-start 0%, $gradient-middle 50%, $gradient-end 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: bold;
+    @include heart-animation;
+  }
+}
+
+// Keyframes for hover effect
+@keyframes fillHeartHover {
+  0% {
+    color: transparent;
+    transform: scale($transform-scale-start);
+  }
+
+  50% {
+    color: transparent;
+    transform: scale($transform-scale-middle);
+  }
+
+  100% {
+    color: transparent;
+    transform: scale($transform-scale-end);
+  }
+}
+
+@media (min-width: 1024px) {
+    // Variables
+$violet-gradient-start: rgba(247, 160, 250, 1);
+$violet-gradient-middle: rgba(192, 96, 195, 1);
+$violet-gradient-end: rgba(151, 71, 255, 1);
+$white-button-background: #F3F3F3;
+$hover-background-color: #e0e0e0;
+$shadow-default: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.6);
+$font-size-violet: 20px;
+$font-size-white: 16px; // You might want to set a different size for the white button if needed
+$border-radius-violet: 30px;
+$border-radius-white: 10px;
+$padding-violet: 5px 50px;
+$padding-white: 25px 50px;
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin button-transition {
+  transition: background-color $transition-duration ease, 
+              box-shadow $transition-duration ease, 
+              transform $transition-duration ease;
+}
+
+@mixin button-shadow {
+  box-shadow: $shadow-default;
+}
+
+@mixin button-shadow-hover {
+  box-shadow: $shadow-hover;
+}
+
+// Violet Button
+.violet-button {
+  background: linear-gradient(150deg, $violet-gradient-start 0%, $violet-gradient-middle 53%, $violet-gradient-end 100%);
+  color: white;
+  padding: $padding-violet;
+  border: none;
+  border-radius: $border-radius-violet;
+  cursor: pointer;
+  @include button-shadow;
+  font-size: $font-size-violet;
+  @include button-transition;
+
+  &:hover {
+    @include button-shadow-hover;
+    filter: brightness(1.2);
+  }
+}
+
+// White Button
+.white-button {
+  padding: $padding-white;
+  white-space: nowrap;
+  border-radius: $border-radius-white;
+  background-color: $white-button-background;
+  color: black;
+  font-size: $font-size-white;
+  @include button-shadow;
+  @include button-transition;
+
+  &:hover {
+    background-color: $hover-background-color;
+    @include button-shadow-hover;
+    filter: brightness(1.2);
+  }
+}
+
+.heart-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+.heart-checkbox {
+    display: none;
+}
+
+.fa-heart {
+    color: black;
+    transition: background 3s ease, transform 0.3s ease;
+}
+
+.heart-container:hover .fa-heart {
+    color: transparent;
+    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 24px;
+    animation: fillHeartHover 3s forwards ease-in-out;
+}
+
+@keyframes fillHeartHover {
+    0% {
+        color: transparent;
+        transform: scale(0.5);
+    }
+
+    50% {
+        color: transparent;
+        transform: scale(1.1);
+    }
+
+    100% {
+        color: transparent;
+        transform: scale(1);
+    }
+}
+
+.violet-button {
+    background: rgb(247, 160, 250);
+    background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    width: 20%;
+    height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+}

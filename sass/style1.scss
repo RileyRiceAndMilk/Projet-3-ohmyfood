@@ -1,0 +1,529 @@
+$fa-heart-color-default: black;
+$fa-heart-color-hover: transparent;
+$gradient-start: rgba(151, 71, 255, 1);
+$gradient-middle: rgba(192, 96, 195, 1);
+$gradient-end: rgba(247, 160, 250, 1);
+$font-size: 24px;
+$animation-duration: 1s;
+$transform-scale-start: 0.5;
+$transform-scale-mid: 1.1;
+$transform-scale-end: 1;
+
+
+@mixin fa-heart-transition {
+  transition: background $animation-duration ease, transform 0.1s ease;
+}
+
+@mixin fa-heart-hover {
+  color: $fa-heart-color-hover;
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-middle 50%, $gradient-end 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+  font-weight: bold;
+  font-size: $font-size;
+  animation: fillHeartHover $animation-duration forwards ease-in-out;
+}
+
+
+.fa-heart {
+  color: $fa-heart-color-default;
+  @include fa-heart-transition;
+}
+
+.heart-container:hover .fa-heart {
+  @include fa-heart-hover;
+}
+
+
+@keyframes fillHeartHover {
+  0% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-start);
+  }
+
+  50% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-mid);
+  }
+
+  100% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-end);
+  }
+}
+
+
+$animation-duration: 0.3s;
+$animation-delay-step: 0.01s;
+$transform-start: translateY(20px);
+$transform-end: translateY(0);
+
+
+.card {
+  @include card-animation(0s); 
+}
+
+
+.Entrée {
+  .card {
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+
+.Plats {
+  .card {
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+.Desserts {
+  .card {
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+
+$transition-duration: 0.3s;
+$animation-duration: 0.6s;
+$checkmark-size: 10px;
+$checkmark-color: #99E2D0;
+$hover-bg-color: #99E2D0;
+$price-transform-x: -60px;
+
+
+@mixin card-transition {
+  transition: box-shadow $transition-duration ease;
+}
+
+@mixin checkmark-transition {
+  transition: opacity $transition-duration ease, right $transition-duration ease;
+}
+
+@mixin show-and-slide-animation {
+  animation: showAndSlide $animation-duration ease forwards;
+}
+
+
+.card {
+  position: relative;
+  @include card-transition;
+  cursor: pointer;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-checkbox {
+  display: none;
+}
+
+.card-subtitle-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.price {
+  position: relative;
+  z-index: 1;
+  transition: transform $transition-duration ease;
+}
+
+.checkmark-container {
+  position: absolute;
+  top: 50%;
+  right: 60px; 
+  transform: translateY(-50%);
+  font-size: $checkmark-size;
+  z-index: 2;
+  opacity: 0;
+  @include checkmark-transition;
+  background-color: white;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include show-and-slide-animation;
+}
+
+.checkmark-container i {
+  color: $checkmark-color;
+}
+
+.card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(100% - 60px);
+  width: 100%;
+  height: 100%;
+  background-color: $hover-bg-color;
+  z-index: 1;
+  transition: opacity $transition-duration ease;
+}
+
+.card:hover .checkmark-container {
+  right: 10px;
+  opacity: 1;
+}
+
+.card:hover .price {
+  transform: translateX($price-transform-x);
+}
+
+@keyframes showAndSlide {
+  0% {
+    right: 60px; 
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    right: 10px; 
+  }
+}
+
+
+$violet-button-bg-start: #FF79DA;
+$violet-button-bg-end: #9356DC;
+$violet-button-color: white;
+$violet-button-padding: 5px 50px;
+$violet-button-border-radius: 30px;
+$violet-button-font-size: 16px;
+$violet-button-width: 50%;
+$violet-button-height: 55px;
+$box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.6);
+$filter-hover: brightness(1.2);
+
+
+@mixin violet-button-styles {
+  background: linear-gradient(180deg, $violet-button-bg-start 0%, $violet-button-bg-end 100%);
+  color: $violet-button-color;
+  padding: $violet-button-padding;
+  border: none;
+  border-radius: $violet-button-border-radius;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: $violet-button-font-size;
+  margin-bottom: 30px;
+  width: $violet-button-width;
+  height: $violet-button-height;
+  transition: box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.violet-button {
+  @include violet-button-styles;
+}
+
+.violet-button:hover {
+  box-shadow: $box-shadow-hover;
+  filter: $filter-hover;
+}
+
+@media (min-width: 1024px) {
+
+    $fa-heart-color-default: black;
+$fa-heart-color-hover: transparent;
+$gradient-start: rgba(151, 71, 255, 1);
+$gradient-middle: rgba(192, 96, 195, 1);
+$gradient-end: rgba(247, 160, 250, 1);
+$font-size: 24px;
+$animation-duration: 1s;
+$transform-scale-start: 0.5;
+$transform-scale-mid: 1.1;
+$transform-scale-end: 1;
+
+
+@mixin fa-heart-transition {
+  transition: background $animation-duration ease, transform 0.1s ease;
+}
+
+@mixin fa-heart-hover {
+  color: $fa-heart-color-hover;
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-middle 50%, $gradient-end 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+  font-weight: bold;
+  font-size: $font-size;
+  animation: fillHeartHover $animation-duration forwards ease-in-out;
+}
+
+
+.fa-heart {
+  color: $fa-heart-color-default;
+  @include fa-heart-transition;
+}
+
+.heart-container:hover .fa-heart {
+  @include fa-heart-hover;
+}
+
+
+@keyframes fillHeartHover {
+  0% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-start);
+  }
+
+  50% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-mid);
+  }
+
+  100% {
+    color: $fa-heart-color-hover;
+    transform: scale($transform-scale-end);
+  }
+}
+
+
+$animation-duration: 0.3s;
+$animation-delay-step: 0.01s;
+$transform-start: translateY(20px);
+$transform-end: translateY(0);
+
+
+@mixin card-animation($delay) {
+  animation: fadeInUp $animation-duration forwards;
+  animation-delay: $delay;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: $transform-start;
+  }
+
+  100% {
+    opacity: 1;
+    transform: $transform-end;
+  }
+}
+
+
+.card {
+  opacity: 0;
+  transform: $transform-start;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+.Entrée {
+  .card {
+    @include card-animation(0s);
+
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+
+.Plats {
+  .card {
+    @include card-animation(0s);
+
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+
+.Desserts {
+  .card {
+    @include card-animation(0s);
+
+    &:nth-child(1) {
+      @include card-animation(0s);
+    }
+
+    &:nth-child(2) {
+      @include card-animation($animation-delay-step);
+    }
+
+    &:nth-child(3) {
+      @include card-animation($animation-delay-step * 2);
+    }
+  }
+}
+
+
+$checkmark-size: 10px;
+$checkmark-color: #99E2D0;
+$checkmark-background: white;
+$checkmark-padding: 8px;
+$checkmark-position-start: 60px;
+$checkmark-position-end: 10px;
+$card-hover-background: #99E2D0;
+$transition-duration: 0.3s;
+$animation-duration: 0.6s;
+
+
+@mixin checkmark-transition {
+  transition: opacity $transition-duration ease, right $transition-duration ease;
+}
+
+@mixin price-transition {
+  transition: transform $transition-duration ease;
+}
+
+@mixin card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: calc(100% - $checkmark-position-start); 
+  width: 100%;
+  height: 100%;
+  background-color: $card-hover-background;
+  z-index: 1;
+  transition: opacity $transition-duration ease;
+}
+
+
+.price {
+  position: relative;
+  z-index: 1;
+  @include price-transition;
+}
+
+
+.checkmark-container {
+  position: absolute;
+  top: 50%;
+  right: $checkmark-position-start;
+  transform: translateY(-50%);
+  font-size: $checkmark-size;
+  z-index: 2;
+  opacity: 0;
+  @include checkmark-transition;
+  background-color: $checkmark-background;
+  border-radius: 50%;
+  padding: $checkmark-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: showAndSlide $animation-duration ease forwards;
+}
+
+.checkmark-container i {
+  color: $checkmark-color;
+}
+
+
+.card:hover::before {
+  @include card-hover-effect;
+}
+
+
+.card:hover .checkmark-container {
+  right: $checkmark-position-end;
+  opacity: 1;
+}
+
+
+.card:hover .price {
+  transform: translateX(-$checkmark-position-start);
+}
+
+
+@keyframes showAndSlide {
+  0% {
+    right: $checkmark-position-start; 
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    right: $checkmark-position-end; 
+  }
+}
+
+$violet-button-bg-start:#FF79DA;
+$violet-button-bg-end: #9356DC;
+$violet-button-color: white;
+$violet-button-padding: 5px 50px;
+$violet-button-border-radius: 30px;
+$violet-button-font-size: 16px;
+$violet-button-width: 30%;
+$violet-button-height: 55px;
+$violet-button-box-shadow: none;
+$violet-button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+$violet-button-hover-brightness: 1.2;
+
+@mixin violet-button-style {
+  background: linear-gradient(180deg, $violet-button-bg-start 0%, $violet-button-bg-end 100%);
+  color: $violet-button-color;
+  padding: $violet-button-padding;
+  border: none;
+  border-radius: $violet-button-border-radius;
+  cursor: pointer;
+  box-shadow: $violet-button-box-shadow;
+  font-size: $violet-button-font-size;
+  margin-bottom: 30px;
+  width: $violet-button-width;
+  height: $violet-button-height;
+}
+
+.violet-button {
+  @include violet-button-style;
+}
+
+.violet-button:hover {
+  box-shadow: $violet-button-hover-shadow;
+  filter: brightness($violet-button-hover-brightness);
+}
+
+}
