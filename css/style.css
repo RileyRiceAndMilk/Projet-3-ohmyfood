@@ -12,78 +12,6 @@ body {
     box-sizing: border-box;
 }
 
-.loader {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    animation: hide-loader 3s forwards;
-}
-
-.logo-loader {
-    width: 120px;
-    animation: grow-shrink-loader 3s ease-in-out infinite;
-}
-
-@keyframes grow-shrink-loader {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.5);
-    }
-}
-
-@keyframes hide-loader {
-    0% {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    99% {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-.content {
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-    margin-top: 10px;
-    animation: show-content 3s forwards;
-}
-
-.logo-main {
-    width: 100px;
-}
-
-
-@keyframes show-content {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    99% {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
-}
 
 header {
     display: flex;
@@ -145,30 +73,6 @@ main {
     padding: 0px 40px;
 }
 
-.violet-button {
-    background: rgb(247, 160, 250);
-    background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-    color: white;
-    padding: 5px 5px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    width: 70%;
-    height: 50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-
-.violet-button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.2);
-}
-
 .operation {
     display: flex;
     justify-content: center;
@@ -222,53 +126,6 @@ main {
     left: -15px;
     top: 45%;
 }
-
-
-.white-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F3F3F3;
-    color: black;
-    border: none;
-    text-align: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
-    gap: 10px;
-    width: 100%;
-    max-width: 767px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.white-button:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.2);
-}
-
-.white-button .fa-mobile-screen-button,
-.white-button .fa-list-ul,
-.white-button .fa-store {
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.white-button:active .fa-mobile-screen-button,
-.white-button:focus .fa-mobile-screen-button,
-.white-button:active .fa-list-ul,
-.white-button:focus .fa-list-ul,
-.white-button:active .fa-store,
-.white-button:focus .fa-store {
-    color: #6a0dad;
-}
-
-
 
 .restaurants {
     display: flex;
@@ -383,81 +240,6 @@ main {
     font-size: 14px;
 }
 
-.heart-container {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 24px;
-    color: black;
-}
-
-.heart-checkbox {
-    display: none;
-}
-
-.fa-heart {
-    color: black;
-    transition: background 3s ease, transform 0.3s ease;
-}
-
-.heart-container:hover .fa-heart {
-    color: transparent;
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartHover 3s forwards ease-in-out;
-}
-
-.heart-checkbox:checked+.fa-heart {
-    color: transparent;
-    background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    animation: fillHeartClick 3s forwards ease-in-out;
-}
-
-@keyframes fillHeartHover {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
-}
-
-@keyframes fillHeartClick {
-    0% {
-        color: transparent;
-        transform: scale(0.5);
-    }
-
-    50% {
-        color: transparent;
-        transform: scale(1.1);
-    }
-
-    100% {
-        color: transparent;
-        transform: scale(1);
-    }
-}
-
 
 footer {
     display: flex;
@@ -522,35 +304,6 @@ footer {
         gap: 20px;
     }
 
-    .violet-button {
-        background: rgb(247, 160, 250);
-        background: linear-gradient(150deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-        color: white;
-        padding: 5px 50px;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-size: 20px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .violet-button:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-        filter: brightness(1.2);
-    }
-
-    .white-button {
-        padding: 25px 50px;
-        white-space: nowrap;
-    }
-
-    .white-button:hover {
-        background-color: #e0e0e0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-        filter: brightness(1.2);
-    }
-
     .restaurant {
         position: relative;
         max-width: 900px;
@@ -589,101 +342,6 @@ footer {
         width: 100%;
         box-sizing: border-box;
         max-width: 900px;
-    }
-
-    .heart-container {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        font-size: 24px;
-        color: black;
-    }
-
-    .heart-checkbox {
-        display: none;
-    }
-
-    .fa-heart {
-        color: black;
-        transition: background 3s ease, transform 0.3s ease;
-    }
-
-    .heart-container:hover .fa-heart {
-        color: transparent;
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartHover 3s forwards ease-in-out;
-    }
-
-    .heart-checkbox:checked+.fa-heart {
-        color: transparent;
-        background: linear-gradient(180deg, rgba(151, 71, 255, 1) 0%, rgba(192, 96, 195, 1) 50%, rgba(247, 160, 250, 1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        display: inline-block;
-        font-weight: bold;
-        font-size: 24px;
-        animation: fillHeartClick 3s forwards ease-in-out;
-    }
-
-    @keyframes fillHeartHover {
-        0% {
-            color: transparent;
-            transform: scale(0.5);
-        }
-
-        50% {
-            color: transparent;
-            transform: scale(1.1);
-        }
-
-        100% {
-            color: transparent;
-            transform: scale(1);
-        }
-    }
-
-    @keyframes fillHeartClick {
-        0% {
-            color: transparent;
-            transform: scale(0.5);
-        }
-
-        50% {
-            color: transparent;
-            transform: scale(1.1);
-        }
-
-        100% {
-            color: transparent;
-            transform: scale(1);
-        }
-    }
-
-    .violet-button {
-        background: rgb(247, 160, 250);
-        background: linear-gradient(180deg, rgba(247, 160, 250, 1) 0%, rgba(192, 96, 195, 1) 53%, rgba(151, 71, 255, 1) 100%);
-        color: white;
-        padding: 5px 5px;
-        border: none;
-        border-radius: 40px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-size: 16px;
-        width: 20%;
-        height: 45px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-        margin-top: 10px;
-        margin-bottom: 20px;
     }
  
 footer {
