@@ -370,51 +370,51 @@ footer {
         position: relative;
         overflow: hidden; 
     }
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-.search-footer {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    background-color: #353535;
-    color: white;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    justify-content: flex-end; 
-    gap: 20px;
-}
-
-.omyfoodtitre {
-    font-family: 'Shrikhand', cursive;
-    font-weight: lighter;
-    font-size: 15px;
-    margin: 0; 
-    order: 1; 
-}
-
-.ohmyfood-footer {
-    display: flex;
-    flex-direction: row; 
-    padding-inline-start: 0px;
-    margin: 0;
-    list-style-type: none;
-    text-align: right; 
-    gap: 20px; 
-    order: 2;
-}
-
-.ohmyfood-footer li {
-    font-weight: normal;
-    text-align: right;
-    font-size: 15px;
-    list-style-type: none;
-}
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .search-footer {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        background-color: #353535;
+        color: white;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: flex-end; 
+        gap: 20px;
+    }
+    
+    .omyfoodtitre {
+        font-family: 'Shrikhand', cursive;
+        font-weight: lighter;
+        font-size: 15px;
+        margin: 0; 
+        order: 1; 
+    }
+    
+    .ohmyfood-footer {
+        display: flex;
+        flex-direction: row; 
+        padding-inline-start: 0px;
+        margin: 0;
+        list-style-type: none;
+        text-align: right; 
+        gap: 20px; 
+        order: 2;
+    }
+    
+    .ohmyfood-footer li {
+        font-weight: normal;
+        text-align: right;
+        font-size: 15px;
+        list-style-type: none;
+    }
 }
