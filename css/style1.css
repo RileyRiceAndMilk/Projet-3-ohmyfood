@@ -80,6 +80,17 @@ header {
     flex-grow: 1;
 }
 
+   .heart-container {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    .heart-checkbox {
+        display: none;
+    }
+
 .menu {
     background-color: #F3F3F3;
     position: relative;
