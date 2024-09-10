@@ -1,0 +1,83 @@
+@keyframes grow-shrink-loader {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(3);
+    }
+}
+
+@keyframes hide-loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes show-content {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fillHeartHover {
+    0% {
+        color: transparent;
+        transform: scale($transform-scale-start);
+    }
+
+    50% {
+        color: transparent;
+        transform: scale($transform-scale-middle);
+    }
+
+    100% {
+        color: transparent;
+        transform: scale($transform-scale-end);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: $transform-start;
+    }
+
+    100% {
+        opacity: 1;
+        transform: $transform-end;
+    }
+}
+
+@keyframes showAndSlide {
+    0% {
+        right: $checkmark-position-start;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        right: $checkmark-position-end;
+    }
+}
