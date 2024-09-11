@@ -1,0 +1,15 @@
+.violet-button-restaurant {
+    @include violet-button-style;
+}
+
+.violet-button-restaurant:hover {
+    box-shadow: $violet-button-hover-shadow;
+    filter: brightness($violet-button-hover-brightness);
+}
+
+.button-wrapper-restaurant {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

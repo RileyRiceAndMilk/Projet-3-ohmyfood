@@ -1,0 +1,59 @@
+@mixin button-shadow {
+    box-shadow: $shadow-default;
+}
+
+@mixin button-shadow-hover {
+    box-shadow: $shadow-hover;
+}
+
+@mixin button-transition {
+    transition: background-color $transition-duration ease,
+        box-shadow $transition-duration ease,
+        transform $transition-duration ease;
+}
+
+@mixin card-hover-effect {
+    position: absolute;
+    top: 0;
+    left: calc(100% - $checkmark-position-start);
+    width: 100%;
+    height: 100%;
+    background-color: $card-hover-background;
+    z-index: 1;
+    transition: opacity $transition-duration ease;
+}
+
+@mixin card-transition {
+    transition: transform $transition-duration ease, opacity $transition-duration ease;
+}
+
+@mixin checkmark-transition {
+    transition: opacity $transition-duration ease, right $transition-duration ease;
+}
+
+@mixin heart-animation {
+    animation: fillHeartHover $heart-animation-duration forwards ease-in-out;
+}
+
+@mixin heart-transition {
+    transition: background $heart-animation-duration ease,
+        transform 0.3s ease;
+}
+
+@mixin price-transition {
+    transition: transform $transition-duration ease;
+}
+
+@mixin violet-button-style ($width: $violet-button-width, $height: $violet-button-height, $font-size: $violet-button-font-size) {
+    background: linear-gradient(180deg, $violet-button-bg-start 0%, $violet-button-bg-end 100%);
+    color: $violet-button-color;
+    padding: $violet-button-padding;
+    border: none;
+    border-radius: $violet-button-border-radius;
+    cursor: pointer;
+    box-shadow: $violet-button-box-shadow;
+    font-size: $font-size;
+    margin-bottom: 30px;
+    width: $width;
+    height: $height;
+}
